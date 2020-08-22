@@ -67,7 +67,7 @@ class _StarRatingState extends State<StarRating> {
     int entireCount = (widget.rating / oneValue).floor();
     double leftValue = widget.rating - entireCount * oneValue;
     double leftRatio = leftValue / oneValue;
-    print("计算：$oneValue, $entireCount, $leftValue, $leftRatio");
+//    print("计算：$oneValue, $entireCount, $leftValue, $leftRatio");
     // 2.集合中加入[填充满的widget]
     for (int i = 0; i < entireCount; i++) {
       widgets.add(widget.selectedWidget);

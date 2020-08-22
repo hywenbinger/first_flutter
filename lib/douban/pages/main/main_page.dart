@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
         ],
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white70,
+        backgroundColor: Color(0xffdddddd),
         unselectedFontSize: 14,
         selectedFontSize: 16,
         onTap: (index) {
@@ -54,16 +54,13 @@ class _MainPageState extends State<MainPage> {
   BottomNavigationBarItem _createItem(String iconName, String title) {
     return BottomNavigationBarItem(
       title: Text(title),
-      icon: Padding(
-        padding: const EdgeInsets.only(top: 10),
-        child: Image.asset(
-          "assets/images/bottom/$iconName.png",
-          width: 30,
-        ),
+      icon: Image.asset(
+        "assets/images/bottom/$iconName.png",
+        width: 24,
       ),
       activeIcon: Image.asset(
         "assets/images/bottom/${iconName}_active.png",
-        width: 32,
+        width: 26,
       ),
     );
   }

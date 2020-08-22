@@ -16,3 +16,10 @@ class MyRectClipper extends CustomClipper<Rect> {
     return width != oldClipper.width;
   }
 }
+
+/// 常量
+class Constant {
+  static const HOME_PAGE_OFFSET = 20;
+}
+
+
