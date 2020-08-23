@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xffdddddd),
         unselectedFontSize: 14,
-        selectedFontSize: 16,
+        selectedFontSize: 14,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
@@ -57,10 +57,12 @@ class _MainPageState extends State<MainPage> {
       icon: Image.asset(
         "assets/images/bottom/$iconName.png",
         width: 24,
+        gaplessPlayback: true,
       ),
       activeIcon: Image.asset(
         "assets/images/bottom/${iconName}_active.png",
-        width: 26,
+        width: 24,
+        gaplessPlayback: true, // 注意gaplessPlayback属性
       ),
     );
   }
