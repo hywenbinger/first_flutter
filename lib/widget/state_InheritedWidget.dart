@@ -113,7 +113,7 @@ class _InheritedTest02State extends State<InheritedTest02> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print("执行了_InheritedTest02State的didChangeDependencies");
+    print("执行了_InheritedTest02State的didChangeDependencies()");
   }
 
   @override
