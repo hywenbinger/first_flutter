@@ -4,6 +4,12 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+/// key的直接子类，主要有：
+///     1.LocalKey：它应用于具有相同父Element的Widget进行比较，也是diff算法的核心所在
+///         ValueKey：当以特定的值(字符串或数字)作为key时使用
+///         ObjectKey：当以Object作为Key时使用
+///         UniqueKey：如果要确保key的唯一性，可以使用UniqueKey
+///     2.GlobalKey：通常我们会使用GlobalKey某个Widget对应的Widget或State或Element
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
