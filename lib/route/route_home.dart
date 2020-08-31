@@ -1,29 +1,8 @@
 import 'package:first_flutter/route/route_detail.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-/// Route
-///     * 一个页面要想被路由统一管理，必须包装为一个Route
-///     * Route是一个抽象类，所以不能实例化的
-///     * 可以使用MaterialPageRoute
-/// Navigator
-///     * 管理所有的Route的Widget，通过stack结构进行管理
-///     * 直接使用 Navigator.of(context) 即可
-///     * 常用方法：
-///           1.Navigator.of(context).push(route);
-///           2.Navigator.of(context).pushNamed(routeName);
-///           3.Navigator.of(context).pop();
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomepage(),
-    );
-  }
-}
-
-class MyHomepage extends StatelessWidget {
+/// 路由的基础用法【主页】
+class RouteHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +30,8 @@ class _MyContentBodyState extends State<MyContentBody> {
         children: <Widget>[
           _getText(context),
           _getButton(context),
+          _getButton2(context),
+          _getButton3(context),
         ],
       ),
     );
@@ -80,20 +61,56 @@ class _MyContentBodyState extends State<MyContentBody> {
   }
 
   void _jumpToDetailPage(BuildContext context) {
-    /// 跳转到详情页
+    /// 跳转到【详情页】
     var future = Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          /// 通过构造函数，往【详情页】传递数据
+          /// 通过【构造函数】，往【详情页】传递数据
           return RouteDetailPage("主页传来的数据");
         },
       ),
     );
+
     /// 接收【详情页】返回传递过来的数据
     future.then((value) {
       setState(() {
         _message = value;
       });
     });
+  }
+
+  Widget _getButton2(BuildContext context) {
+    return RaisedButton(
+      onPressed: () {
+        _jumpToDetailPage2(context);
+      },
+      child: Text(
+        "使用命名路由方式跳到详情页",
+        style: TextStyle(fontSize: 24),
+      ),
+    );
+  }
+
+  void _jumpToDetailPage2(BuildContext context) {
+    /// 使用命名路由方式跳转到【详情页】
+    Navigator.of(context)
+        .pushNamed(RouteDetailPage.routeName, arguments: "从主页使用命名路由方式跳转并传递的数据");
+  }
+
+  Widget _getButton3(BuildContext context) {
+    return RaisedButton(
+      onPressed: () {
+        _jumpToUnknownPage(context);
+      },
+      child: Text(
+        "点击跳到未知页面",
+        style: TextStyle(fontSize: 24),
+      ),
+    );
+  }
+
+  void _jumpToUnknownPage(BuildContext context) {
+    /// 使用命名路由方式启动不存在的路由
+    Navigator.of(context).pushNamed("unknown");
   }
 }

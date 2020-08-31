@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
 
-/// 路由的基础用法【详情页】
-class RouteDetailPage extends StatelessWidget {
+/// 命名路由的用法【详情页】
+class RouteNameDetailPage extends StatelessWidget {
   static const String routeName = "/detail";
-  final String _message;
-
-  RouteDetailPage(this._message);
 
   @override
   Widget build(BuildContext context) {
+    /// 获取【主页】传递过来的数据
+    final String message = ModalRoute.of(context).settings.arguments as String;
     return WillPopScope(
-      /// onWillPop()返回值：
-      ///     1.返回Future.value(false)：自行处理返回逻辑
-      ///     2.返回Future.value(true)：自动返回(Flutter内部实现)
       onWillPop: () {
-        print("返回了");
         _jumpToHomePage(context, "返回退到主页");
         return Future.value(false);
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text("路由——详情页"),
+          title: Text("命名路由——详情页"),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _getText(context),
+              _getText(context, message),
               _getButton(context),
             ],
           ),
@@ -35,9 +30,9 @@ class RouteDetailPage extends StatelessWidget {
     );
   }
 
-  Widget _getText(BuildContext context) {
+  Widget _getText(BuildContext context, String message) {
     return Text(
-      _message,
+      message,
       style: TextStyle(
         fontSize: 30,
         color: Colors.blue,
@@ -49,7 +44,6 @@ class RouteDetailPage extends StatelessWidget {
     return FlatButton(
       color: Colors.grey,
       onPressed: () {
-        print("点击退到主页");
         _jumpToHomePage(context, "点击退到主页");
       },
       child: Icon(
@@ -59,7 +53,6 @@ class RouteDetailPage extends StatelessWidget {
     );
   }
 
-  /// 注意：这里传入的BuildContext必须是page root的BuildContext，否则pop后会出现黑屏问题
   void _jumpToHomePage(BuildContext context, String message) {
     /// pop()中携带了传递给【主页】的数据
     Navigator.of(context).pop(message);
