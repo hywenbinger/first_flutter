@@ -16,19 +16,17 @@ class RouteDetailPage extends StatelessWidget {
         _jumpToHomePage(context, "返回退到主页");
         return Future.value(false);
       },
-      child: MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text("路由——详情页"),
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _getText(context),
-                _getButton(context),
-              ],
-            ),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("路由——详情页"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _getText(context),
+              _getButton(context),
+            ],
           ),
         ),
       ),
