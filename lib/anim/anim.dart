@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("动画"),
+        title: Text("Animation"),
       ),
       body: MyHeart(
         key: _globalKey,
