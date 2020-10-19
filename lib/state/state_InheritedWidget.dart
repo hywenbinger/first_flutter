@@ -62,7 +62,7 @@ class _MyHomepageState extends State<MyHomepage> {
       ),
       body: DataWidget(
         num: _num,
-        // Column外面包裹DataWidget
+        /// Column外面包裹DataWidget
         child: Column(
           children: <Widget>[
             InheritedTest01(),
