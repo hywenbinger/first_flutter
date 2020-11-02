@@ -1,0 +1,6 @@
+{
+  "title": "国际化",
+  "hello": "你好Flutter",
+  "pickTime": "选择时间",
+  "sayHello": "你好{name}"
+}

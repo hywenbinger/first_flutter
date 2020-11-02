@@ -1,0 +1,6 @@
+{
+  "title": "Internationalization",
+  "hello": "Hello Flutter",
+  "pickTime": "Pick Time",
+  "sayHello": "Hello {name}"
+}
