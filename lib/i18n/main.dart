@@ -1,6 +1,6 @@
+import 'package:first_flutter/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'generated/l10n.dart';
 
 /// 国际化：
 ///     arb文件全称Application Resource Bundle，表示应用资源包
@@ -63,7 +63,7 @@ class MyHomePage extends StatelessWidget {
 
   Text _buildText(BuildContext context) {
     return Text(
-      S.of(context).hello,
+      S.of(context).sayHello("Kotlin"),
       style: TextStyle(
         fontSize: 24,
       ),

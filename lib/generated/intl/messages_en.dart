@@ -1,5 +1,5 @@
-// DO NOT EDIT. This is code i18n.generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a zh locale. All the
+// DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
+// This is a library that provides messages for a en locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,12 +17,15 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'zh';
+  String get localeName => 'en';
+
+  static m0(name) => "Hello ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "hello" : MessageLookupByLibrary.simpleMessage("你好Flutter"),
-    "pickTime" : MessageLookupByLibrary.simpleMessage("选择时间"),
-    "title" : MessageLookupByLibrary.simpleMessage("国际化")
+    "hello" : MessageLookupByLibrary.simpleMessage("Hello Flutter"),
+    "pickTime" : MessageLookupByLibrary.simpleMessage("Pick Time"),
+    "sayHello" : m0,
+    "title" : MessageLookupByLibrary.simpleMessage("Internationalization")
   };
 }
