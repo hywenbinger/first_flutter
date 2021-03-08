@@ -31,7 +31,8 @@ class MyContentBody extends StatelessWidget {
 }
 
 /// Stack
-/// 1. 水平和垂直方向上都是内容包裹的
+/// 1. children里无Align或Positioned，Stack尺寸就是children中最大Widget的尺寸
+///    children里有Align或Positioned，Stack尺寸就是它的父级组件的最大约束
 /// 2. StackFit
 ///     loose：
 ///     expand：将子元素拉伸到尽可能大
